@@ -1,0 +1,13 @@
+1.first impor sqlalchemy maduls > Table,Column,Float,ForeignKey,Integer,String,create_enginge,
+
+2.we create engin by databse adress in locla host as DB
+
+3.white metadat collect tabes and contents as metadat
+
+4.create data table for each table in metadat
+        4.1 for create each table use Table
+        and writ in that ,table name ,and meta,then Column() and put in that colum heading ,and type and key 
+5.making connection by db.connect()
+
+    and request queries and whatever
+
