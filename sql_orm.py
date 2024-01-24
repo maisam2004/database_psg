@@ -50,11 +50,46 @@ base.metadata.create_all(db)
 
 
 # Query 1 - select all records from the "Artist" table
-try:
+""" try:
     albums = session.query(Album).filter_by(ArtistId=51)
     artists = session.query(Artist)
     for artist in artists:
         print(artist.ArtistId,artist.Name, sep=" | ")
 except Exception as e:
+    print(e)  """
+# Query 2 = select only the "Name" column from "Artist" table
+    
+""" try:
+    artists = session.query(Artist)
+    for ar in artists:
+        print(ar.Name,'--' ,sep="% %")
+
+except Exception as e:
+    print(e)
+ """
+# Query 3 = select only "Queen" from the Aartist table
+try:
+    artist = session.query(Artist).filter_by(Name = 'Queen').first()
+    print(artist.ArtistId,artist.Name)
+       
+except Exception as e:
     print(e)
 
+# Query 5 = select only album filtered by artist id of 51
+""" try:
+    albums = session.query(Album).filter_by(ArtistId=51)
+    
+    for al in albums:
+        if len(al.Title) < 17 :
+            print(al.ArtistId,al.Title, sep=" | ")
+except Exception as e:
+    print(e) """
+
+#Query 6 = selcet track that have composer of Queen
+try:
+    tracks = session.query(Track).filter_by(Composer = "Queen")
+    print('TrackId','Name','Album Id ','Composer','Bytes','Unit price',sep='|')
+    for tr in tracks :
+        print(tr.TrackId,tr.Name,tr.AlbumId,tr.Composer,tr.Bytes,tr.UnitPrice,sep='|')
+except Exception as e:
+    print(e)

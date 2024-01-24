@@ -1,0 +1,26 @@
+import sqlalchemy maduls 
+import declarative_base from sqlalchemy.ext.declarative
+import Session , sessionmaker from sqlalchemy.orm
+
+1.create engine with link localhost as db
+
+2 create base with declarative_base
+
+3. create table classes 
+        class Name(base):
+            __tablename__ = "tname"
+            columnHeading = column(Integer,primary_key = True)
+            otherHeading = Column(string)
+            ArtistId = Column(Integer, ForeignKey("Artist.ArtistId")) << another class naem,with one column var
+            UnitPrice = Column(Float)
+
+4.create a new instance of sessionmaker point to db enginge
+     Session = sessionmaker(db)
+
+5. call Session() class in var session to the use it for writing queries
+
+6.create database by base declarative subclass
+        base.metadata.create_all(db)
+7.and for end write query by using 
+        session.query(classname)
+        session.query(classname).filter_by(columnHead = value)
